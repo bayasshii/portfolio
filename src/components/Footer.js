@@ -11,7 +11,17 @@ const Footer = class extends React.Component {
   render() {
     return (
       <footer className="footer has-background-black has-text-white-ter">
-        <div>Footer</div>
+        <div>
+          <Link to="/" className="navbar-item" title="Logo">
+            Home
+          </Link>
+          <Link className="navbar-item" to="/about">
+            About
+          </Link>
+          <Link className="navbar-item" to="/blog">
+            Blog
+          </Link>
+        </div>
       </footer>
     )
   }
