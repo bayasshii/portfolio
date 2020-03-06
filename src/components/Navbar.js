@@ -40,6 +40,9 @@ const Navbar = class extends React.Component {
         aria-label="main-navigation"
       >
         <div className="container">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#0099ff" fill-opacity="1" d="M0,288L40,288C80,288,160,288,240,250.7C320,213,400,139,480,90.7C560,43,640,21,720,64C800,107,880,213,960,218.7C1040,224,1120,128,1200,90.7C1280,53,1360,75,1400,85.3L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path>
+          </svg>
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Logo">
               <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
