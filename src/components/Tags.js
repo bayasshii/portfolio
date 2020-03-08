@@ -12,12 +12,19 @@ const TagUl = styled.ul`
 `
 const TagLi = styled.li`
   padding: 7px 10px;
-  margin: 10px 10px 10px 0;
+  margin: 10px 10px 0 0;
   border: 1px solid #aaa;
   border-radius: 5px;
   font-size: 12px;
   line-height: 12px;
-  color: #aaa;
+  @media screen and (max-width: 767px) {
+    padding:5px 8px;
+    font-size: 10px;
+    line-height: 10px;
+  }
+  & a {
+    color: #aaa;
+  }
 `
 
 const Tags = class extends React.Component {
