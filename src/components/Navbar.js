@@ -66,7 +66,7 @@ const Navbar = class extends React.Component {
           <Link to="/blog">BLOG</Link>
           <Link to="/about">ABOUT</Link>
         </main>
-        /*}
+        /*}]
 
         {/*
         <Link to="/contact">Contact</Link>

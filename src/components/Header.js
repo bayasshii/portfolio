@@ -10,15 +10,27 @@ const HeaderSVG= styled.svg`
 const HeaderText = styled.div`
   position: absolute;
   top: 180px;
-  right: 100px;
-  font-size: 24px;
+  right: 200px;
+  font-size: 26px;
   font-weight: 700;
   color: #FFF;
   text-align: right;
+  & span {
+    font-size: 18px;
+    color: #FFF;
+    opacity: 0.8;
+    font-weight: 400;
+  }
   @media screen and (max-width: 760px) {
     top: 20px;
-    font-size: 14px;
+    font-size: 16px;
     right: 30px;
+    & span {
+      font-size: 12px;
+      color: #FFF;
+      opacity: 0.8;
+      font-weight: 400;
+    }
   }
 `
 
@@ -56,8 +68,10 @@ const Header = class extends React.Component {
         <HeaderWrap>
           {GradientBackground()}
           <HeaderText>
-            aikoをこよなく愛するデザイナー<br/>きばやしのブログ
+            きばやしのブログ<br/>
+            <span>aikoをこよなく愛するデザイナー</span>
           </HeaderText>
+
         </HeaderWrap>
       </React.Fragment>
     )

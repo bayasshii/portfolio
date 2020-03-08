@@ -1,11 +1,28 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import WidthLayout from '../components/WidthLayout'
+import Tags from '../components/Tags'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import styled from 'styled-components'
+
+const BlogPostWrap = styled.div`
+`
+const BlogPostHeader = styled.div`
+  width: 100%;
+  box-shadow: 0px 30px 3px -3px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0px 9px 3px -3px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0px 9px 3px -3px rgba(0,0,0,0.1);
+  & h1 {
+    font-size: 36px;
+    @media screen and (max-width: 767px) {
+      font-size: 24px;
+    }
+  }
+`
 
 export const BlogPostTemplate = ({
   content,
@@ -14,36 +31,36 @@ export const BlogPostTemplate = ({
   tags,
   title,
   helmet,
+  date,
+  featuredimage
 }) => {
   const PostContent = contentComponent || Content
 
   return (
-    <WidthLayout>
+    <React.Fragment>
       {helmet || ''}
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}だよ
-            </h1>
-            <p>{description}</p>
-            <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map(tag => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+      <BlogPostWrap>
+        <BlogPostHeader>
+          <WidthLayout>
+            <p>{date}</p>
+            <h1>{title}</h1>
+            <Tags tags={tags}/>
+            {featuredimage ? (
+              <PreviewCompatibleImage
+                imageInfo={{
+                  image: featuredimage,
+                  alt: `featured image thumbnail for post ${title}`,
+                }}
+              />
             ) : null}
-          </div>
-        </div>
-      </div>
-    </WidthLayout>
+          </WidthLayout>
+        </BlogPostHeader>
+        <WidthLayout>
+          <PostContent content={content} />
+          <Tags tags={tags}/>
+        </WidthLayout>
+      </BlogPostWrap>
+    </React.Fragment>
   )
 }
 
@@ -53,6 +70,8 @@ BlogPostTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
+  date: PropTypes.string,
+  featuredimage: PropTypes.shape
 }
 
 const BlogPost = ({ data }) => {
@@ -75,6 +94,8 @@ const BlogPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        date={post.frontmatter.date}
+        featuredimage={post.frontmatter.featuredimage}
       />
     </Layout>
   )
