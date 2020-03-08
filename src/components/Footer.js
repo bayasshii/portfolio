@@ -1,112 +1,37 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
-import logo from '../img/logo.svg'
-import facebook from '../img/social/facebook.svg'
-import instagram from '../img/social/instagram.svg'
-import twitter from '../img/social/twitter.svg'
-import vimeo from '../img/social/vimeo.svg'
+function Icon() {
+  return (
+    <svg version="1.1" id="レイヤー_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 338">
+      <g id="Page-1">
+        <g id="Desktop">
+          <g id="Header">
+            <linearGradient id="Rectangle_3_" gradientUnits="userSpaceOnUse" x1="433.5762" y1="296.5683" x2="434.5762" y2="296.5683" gradientTransform="matrix(-1024 0 0 337.5626 445006 -99941.1484)">
+              <stop  offset="0" style={{stopColor:'#FD57A3'}}/>
+              <stop  offset="0.4308" style={{stopColor:'#7571DB'}}/>
+              <stop  offset="1" style={{stopColor:'#AEF779'}}/>
+            </linearGradient>
+            <path id="Rectangle_2_" fill="url(#Rectangle_3_)" d="M1024,338H0L0,29.938C86.768,10.271,177.445,0.437,272.031,0.437
+              c141.879,0,353.036,110.019,477.344,110.019c82.872,0,174.414-16.787,274.626-50.361V338z"/>
+            <linearGradient id="Rectangle_4_" gradientUnits="userSpaceOnUse" x1="433.5762" y1="296.5766" x2="434.5762" y2="296.5766" gradientTransform="matrix(-1024 0 0 315 445006 -93241.1172)">
+              <stop  offset="0" style={{stopColor:'#FD57A'}}/>
+              <stop  offset="0.4308" style={{stopColor:'#7571DB'}}/>
+              <stop  offset="1" style={{stopColor:'#49415E'}}/>
+            </linearGradient>
+            <path id="Rectangle_3_" fill="url(#Rectangle_4_)" d="M1024,338H0L0,77.514C84.55,41.171,180.883,23,288.997,23
+              c162.172,0,291.238,68.986,459.361,68.986c112.082,0,203.963-10.77,275.642-32.309V338z"/>
+          </g>
+        </g>
+      </g>
+    </svg>
+  );
+}
 
 const Footer = class extends React.Component {
   render() {
     return (
-      <footer className="footer has-background-black has-text-white-ter">
-        <div className="content has-text-centered">
-          <img
-            src={logo}
-            alt="Kaldi"
-            style={{ width: '14em', height: '10em' }}
-          />
-        </div>
-        <div className="content has-text-centered has-background-black has-text-white-ter">
-          <div className="container has-background-black has-text-white-ter">
-            <div className="columns">
-              <div className="column is-4">
-                <section className="menu">
-                  <ul className="menu-list">
-                    <li>
-                      <Link to="/" className="navbar-item">
-                        Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/about">
-                        About
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/products">
-                        Products
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact/examples">
-                        Form Examples
-                      </Link>
-                    </li>
-                    <li>
-                      <a
-                        className="navbar-item"
-                        href="/admin/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Admin
-                      </a>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div className="column is-4">
-                <section>
-                  <ul className="menu-list">
-                    <li>
-                      <Link className="navbar-item" to="/blog">
-                        Latest Stories
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact">
-                        Contact
-                      </Link>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div className="column is-4 social">
-                <a title="facebook" href="https://facebook.com">
-                  <img
-                    src={facebook}
-                    alt="Facebook"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="twitter" href="https://twitter.com">
-                  <img
-                    className="fas fa-lg"
-                    src={twitter}
-                    alt="Twitter"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="instagram" href="https://instagram.com">
-                  <img
-                    src={instagram}
-                    alt="Instagram"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="vimeo" href="https://vimeo.com">
-                  <img
-                    src={vimeo}
-                    alt="Vimeo"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+      <footer>
+        {Icon()}
       </footer>
     )
   }
