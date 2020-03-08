@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import { slide as Menu } from 'react-burger-menu'
 import styled from 'styled-components'
 
 const Nav = styled.nav`
@@ -48,18 +49,29 @@ const Navbar = class extends React.Component {
     )
   }
 
+  showSettings (event) {
+    event.preventDefault()
+  }
+
   render() {
+    var isMenuOpen = function(state) {
+      return state.isOpen;
+    };
     return (
-      <Nav>
-        <NavWrap>
-          <NavList>
-            <Link to="/">HOME</Link>
-            <Link to="/about">ABOUT</Link>
-            <Link to="/blog">BLOG</Link>
-            <Link to="/contact">Contact</Link>
-          </NavList>
-        </NavWrap>
-      </Nav>
+      <React.Fragment>
+        {/*
+        <Menu pageWrapId={ "page-wrap" } onStateChange={ isMenuOpen }/>
+        <main id="page-wrap">
+          <Link to="/">HOME</Link>
+          <Link to="/blog">BLOG</Link>
+          <Link to="/about">ABOUT</Link>
+        </main>
+        /*}
+
+        {/*
+        <Link to="/contact">Contact</Link>
+        */}
+      </React.Fragment>
     )
   }
 }

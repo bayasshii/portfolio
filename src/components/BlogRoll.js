@@ -2,6 +2,39 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
+import styled from 'styled-components'
+
+const BrogRollWrap = styled.div`
+  padding-bottom: 50px;
+`
+const BrogRollTitle = styled.h1`
+  font-weight: 700;
+  font-size: 21px;
+`
+const BrogRollItemWrap = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`
+
+const BrogRollItem = styled.article`
+  box-sizing: border-box;
+  width: 50%;
+  margin-bottom: 30px;
+  &:nth-child(odd) {
+    padding-right: 15px;
+  }
+  &:nth-child(even) {
+    padding-left: 15px;
+  }
+`
+const BrogRollItemTextWrap = styled.p`
+`
+const BrogRollItemTextTitle = styled.h2`
+  font-size: 18px
+`
+const BrogRollItemTextDate = styled.p`
+  color: #ADADAD;
+`
 
 class BlogRoll extends React.Component {
   render() {
@@ -9,51 +42,30 @@ class BlogRoll extends React.Component {
     const { edges: posts } = data.allMarkdownRemark
 
     return (
-      <div className="columns is-multiline">
-        {posts &&
-          posts.map(({ node: post }) => (
-            <div className="is-parent column is-6" key={post.id}>
-              <article
-                className={`blog-list-item tile is-child box notification ${
-                  post.frontmatter.featuredpost ? 'is-featured' : ''
-                }`}
-              >
-                <header>
+      <BrogRollWrap>
+        <BrogRollTitle style={{paddingBottom: '20px'}}>最新投稿</BrogRollTitle>
+        <BrogRollItemWrap>
+          {posts &&
+            posts.map(({ node: post }) => (
+              <BrogRollItem key={post.id}>
+                <Link to={post.fields.slug}>
                   {post.frontmatter.featuredimage ? (
-                    <div className="featured-thumbnail">
-                      <PreviewCompatibleImage
-                        imageInfo={{
-                          image: post.frontmatter.featuredimage,
-                          alt: `featured image thumbnail for post ${post.title}`,
-                        }}
-                      />
-                    </div>
+                    <PreviewCompatibleImage
+                      imageInfo={{
+                        image: post.frontmatter.featuredimage,
+                        alt: `featured image thumbnail for post ${post.title}`,
+                      }}
+                    />
                   ) : null}
-                  <p className="post-meta">
-                    <Link
-                      className="title has-text-primary is-size-4"
-                      to={post.fields.slug}
-                    >
-                      {post.frontmatter.title}
-                    </Link>
-                    <span> &bull; </span>
-                    <span className="subtitle is-size-5 is-block">
-                      {post.frontmatter.date}
-                    </span>
-                  </p>
-                </header>
-                <p>
-                  {post.excerpt}
-                  <br />
-                  <br />
-                  <Link className="button" to={post.fields.slug}>
-                    Keep Reading →
-                  </Link>
-                </p>
-              </article>
-            </div>
-          ))}
-      </div>
+                  <BrogRollItemTextWrap>
+                    <BrogRollItemTextDate style={{paddingTop: '10px'}}>{post.frontmatter.date}</BrogRollItemTextDate>
+                    <BrogRollItemTextTitle>{post.frontmatter.title}</BrogRollItemTextTitle>
+                  </BrogRollItemTextWrap>
+                </Link>
+              </BrogRollItem>
+            ))}
+          </BrogRollItemWrap>
+      </BrogRollWrap>
     )
   }
 }

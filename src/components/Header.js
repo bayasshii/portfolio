@@ -48,7 +48,7 @@ const Header = class extends React.Component {
         <HeaderWrap>
           {GradientBackground()}
           <HeaderText>
-            aikoをこよなく愛する<br/>デザイナーのブログ
+            aikoをこよなく愛するデザイナー<br/>きばやしのブログ
           </HeaderText>
         </HeaderWrap>
       </React.Fragment>

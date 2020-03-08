@@ -1,31 +1,29 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
-
 import Layout from '../components/Layout'
-import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
+import styled from 'styled-components'
+
+const IndexWrap = styled.div`
+  width: 1000px;
+  margin: auto;
+`
 
 export const IndexPageTemplate = () => (
-  <div>
-    ああ
-  </div>
+  <React.Fragment>
+      <IndexWrap>
+        <BlogRoll/>
+      </IndexWrap>
+  </React.Fragment>
 )
 
-const IndexPage = ({ data }) => {
-  return (
-    <Layout>
-      <IndexPageTemplate/>
-    </Layout>
-  )
-}
-
-IndexPage.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-    }),
-  }),
+class IndexPage extends React.Component {
+  render() {
+    return (
+      <Layout>
+        <IndexPageTemplate/>
+      </Layout>
+    )
+  }
 }
 
 export default IndexPage
