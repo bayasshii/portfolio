@@ -1,15 +1,18 @@
 ---
 templateKey: blog-post
 title: テストだよ-------------ん
-date: 2016-12-17T15:04:10.000Z
+date: 2020-03-08T15:04:10.000Z
 description: テストのつもりで書いています。
 featuredpost: false
-featuredimage: /img/flavor_wheel.jpg
+featuredimage: /img/スクリーンショット-2020-03-08-22.20.46.png
 tags:
-  - flavor
-  - tasting
+  - webdesign
+  - architecture
+  - cocoacigarette
+  - aiko
+  - roadbike
 ---
-![flavor wheel](/img/flavor_wheel.jpg)
+![flavor wheel](/img/スクリーンショット-2020-03-08-22.20.46.png)
 
 The SCAA updated the wheel to reflect the finer nuances needed to describe flavors more precisely. The new descriptions are more detailed and hence allow cuppers to distinguish between more flavors.
 
