@@ -4,6 +4,9 @@ import styled from 'styled-components'
 const HeaderWrap = styled.header`
 `
 
+const HeaderSVG= styled.svg`
+`
+
 const HeaderText = styled.div`
   position: absolute;
   top: 180px;
@@ -12,11 +15,16 @@ const HeaderText = styled.div`
   font-weight: 700;
   color: #FFF;
   text-align: right;
+  @media screen and (max-width: 760px) {
+    top: 20px;
+    font-size: 14px;
+    right: 30px;
+  }
 `
 
 function GradientBackground() {
   return (
-    <svg version="1.1" id="レイヤー_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 338">
+    <HeaderSVG version="1.1" id="レイヤー_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 338"  preserveAspectRatio="none">
       <g id="Page-1">
         <g id="Desktop">
           <g id="Header">
@@ -37,7 +45,7 @@ function GradientBackground() {
           </g>
         </g>
       </g>
-    </svg>
+    </HeaderSVG>
   );
 }
 

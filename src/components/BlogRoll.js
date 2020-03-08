@@ -8,8 +8,6 @@ const BrogRollWrap = styled.div`
   padding-bottom: 50px;
 `
 const BrogRollTitle = styled.h1`
-  font-weight: 700;
-  font-size: 21px;
 `
 const BrogRollItemWrap = styled.div`
   display: flex;
@@ -25,6 +23,10 @@ const BrogRollItem = styled.article`
   }
   &:nth-child(even) {
     padding-left: 15px;
+  }
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    padding: 0;
   }
 `
 const BrogRollItemTextWrap = styled.p`
