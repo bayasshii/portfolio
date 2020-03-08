@@ -12,10 +12,17 @@ import styled from 'styled-components'
 const BlogPostWrap = styled.div`
 `
 const BlogPostHeader = styled.div`
+  margin-top: -100px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
   width: 100%;
   box-shadow: 0px 30px 3px -3px rgba(0,0,0,0.1);
   -webkit-box-shadow: 0px 9px 3px -3px rgba(0,0,0,0.1);
   -moz-box-shadow: 0px 9px 3px -3px rgba(0,0,0,0.1);
+  @media screen and (max-width: 768px){
+    padding-bottom: 0;
+    margin-top: -30px;
+  }
   & h1 {
     font-size: 36px;
     @media screen and (max-width: 767px) {
@@ -31,8 +38,7 @@ export const BlogPostTemplate = ({
   tags,
   title,
   helmet,
-  date,
-  featuredimage
+  date
 }) => {
   const PostContent = contentComponent || Content
 
@@ -44,15 +50,6 @@ export const BlogPostTemplate = ({
           <WidthLayout>
             <p>{date}</p>
             <h1>{title}</h1>
-            <Tags tags={tags}/>
-            {featuredimage ? (
-              <PreviewCompatibleImage
-                imageInfo={{
-                  image: featuredimage,
-                  alt: `featured image thumbnail for post ${title}`,
-                }}
-              />
-            ) : null}
           </WidthLayout>
         </BlogPostHeader>
         <WidthLayout>
@@ -70,8 +67,7 @@ BlogPostTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
-  date: PropTypes.string,
-  featuredimage: PropTypes.shape
+  date: PropTypes.string
 }
 
 const BlogPost = ({ data }) => {
@@ -95,7 +91,6 @@ const BlogPost = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         date={post.frontmatter.date}
-        featuredimage={post.frontmatter.featuredimage}
       />
     </Layout>
   )
