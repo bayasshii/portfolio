@@ -22,7 +22,7 @@ const HeaderText = styled.div`
     font-weight: 400;
   }
   @media screen and (max-width: 760px) {
-    top: 20px;
+    top: 25px;
     font-size: 16px;
     right: 30px;
     & span {
