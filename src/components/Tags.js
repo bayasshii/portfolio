@@ -11,10 +11,13 @@ const TagUl = styled.ul`
   padding: 10px 0 0 0;
 `
 const TagLi = styled.li`
-  padding: 3px 10px;
+  padding: 7px 10px;
   margin: 10px 10px 10px 0;
   border: 1px solid #aaa;
   border-radius: 5px;
+  font-size: 12px;
+  line-height: 12px;
+  color: #aaa;
 `
 
 const Tags = class extends React.Component {
