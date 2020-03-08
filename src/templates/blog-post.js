@@ -12,6 +12,8 @@ import styled from 'styled-components'
 const BlogPostWrap = styled.div`
 `
 const BlogPostHeader = styled.div`
+  margin-top: -50px;
+  margin-bottom: 50px;
   width: 100%;
   box-shadow: 0px 30px 3px -3px rgba(0,0,0,0.1);
   -webkit-box-shadow: 0px 9px 3px -3px rgba(0,0,0,0.1);
