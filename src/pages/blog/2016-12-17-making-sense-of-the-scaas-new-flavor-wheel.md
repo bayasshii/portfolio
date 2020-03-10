@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: ブログ始めます
+title: きばやしブログ始めます
 date: 2020-03-08T19:00:10.000Z
 description: descriptionだよん
 featuredpost: false
