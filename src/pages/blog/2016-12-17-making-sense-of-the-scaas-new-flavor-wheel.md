@@ -8,7 +8,7 @@ featuredimage: /img/blogphoto1.jpg
 tags:
   - 雑談
 ---
-![flavor wheel](/img/スクリーンショット-2020-03-08-22.20.46.png)
+![my_image](/img/blogphoto1.jpg)
 
 突然ですが、
 
