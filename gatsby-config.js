@@ -3,6 +3,7 @@ module.exports = {
     title: 'きばやしの雑多なブログ',
     description:
       'About Me',
+      siteUrl: 'https://kibamasa.com'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -27,6 +28,15 @@ module.exports = {
       options: {
         path: `${__dirname}/src/img`,
         name: 'images',
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-social-cards`,
+          // ...
+        ],
       },
     },
     'gatsby-plugin-sharp',
