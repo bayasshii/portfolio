@@ -8,7 +8,7 @@ const StyledImg = styled(Img)`
   border-radius: 5px;
   width: 100%;
   height: 300px;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1000px) {
     height: auto;
   }
 `

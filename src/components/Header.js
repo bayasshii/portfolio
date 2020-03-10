@@ -21,7 +21,7 @@ const HeaderText = styled.div`
     opacity: 0.8;
     font-weight: 400;
   }
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 1000px) {
     top: 25px;
     font-size: 16px;
     right: 30px;

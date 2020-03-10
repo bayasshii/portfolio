@@ -60,8 +60,8 @@ class BlogRoll extends React.Component {
                     />
                   ) : null}
                   <BrogRollItemTextWrap>
-                    <BrogRollItemTextDate style={{paddingTop: '10px'}}>{post.frontmatter.date}</BrogRollItemTextDate>
-                    <BrogRollItemTextTitle style={{paddingTop: '5px'}}>{post.frontmatter.title}</BrogRollItemTextTitle>
+                    <BrogRollItemTextDate style={{paddingTop: '5px'}}>{post.frontmatter.date}</BrogRollItemTextDate>
+                    <BrogRollItemTextTitle style={{paddingTop: '0px'}}>{post.frontmatter.title}</BrogRollItemTextTitle>
                   </BrogRollItemTextWrap>
                 </Link>
               </BrogRollItem>
