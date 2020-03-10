@@ -2,22 +2,31 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 
+import styled from 'styled-components'
+
+const StyledImg = styled(Img)`
+  border-radius: 5px;
+  width: 100%;
+  height: 300px;
+  @media screen and (max-width: 767px) {
+    height: auto;
+  }
+`
+
 const PreviewCompatibleImage = ({ imageInfo }) => {
-  const imageStyle = { borderRadius: '5px' }
   const { alt = '', childImageSharp, image } = imageInfo
 
   if (!!image && !!image.childImageSharp) {
-    return (
-      <Img style={imageStyle} fluid={image.childImageSharp.fluid} alt={alt} />
-    )
+    return <StyledImg fluid={image.childImageSharp.fluid} alt={alt} />
   }
 
   if (!!childImageSharp) {
-    return <Img style={imageStyle} fluid={childImageSharp.fluid} alt={alt} />
+    return <StyledImg fluid={childImageSharp.fluid} alt={alt} />
   }
 
-  if (!!image && typeof image === 'string')
-    return <img style={imageStyle} src={image} alt={alt} />
+  if (!!image && typeof image === 'string') {
+    return <img style={{ borderRadius: '5px' }} src={image} alt={alt} />
+  }
 
   return null
 }
