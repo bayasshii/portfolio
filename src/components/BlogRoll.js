@@ -26,15 +26,15 @@ const BrogRollItem = styled.article`
   }
   @media screen and (max-width: 768px) {
     width: 100%;
-    padding: 0;
+    padding: 0!important;
   }
 `
-const BrogRollItemTextWrap = styled.p`
+const BrogRollItemTextWrap = styled.div`
 `
 const BrogRollItemTextTitle = styled.h2`
   font-size: 18px
 `
-const BrogRollItemTextDate = styled.p`
+const BrogRollItemTextDate = styled.div`
   color: #ADADAD;
 `
 
@@ -61,7 +61,7 @@ class BlogRoll extends React.Component {
                   ) : null}
                   <BrogRollItemTextWrap>
                     <BrogRollItemTextDate style={{paddingTop: '10px'}}>{post.frontmatter.date}</BrogRollItemTextDate>
-                    <BrogRollItemTextTitle>{post.frontmatter.title}</BrogRollItemTextTitle>
+                    <BrogRollItemTextTitle style={{paddingTop: '5px'}}>{post.frontmatter.title}</BrogRollItemTextTitle>
                   </BrogRollItemTextWrap>
                 </Link>
               </BrogRollItem>
