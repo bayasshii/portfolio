@@ -8,6 +8,7 @@ import WidthLayout from '../components/WidthLayout'
 import Tags from '../components/Tags'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 
 const BlogPostWrap = styled.div`
 `
@@ -30,6 +31,17 @@ const BlogPostHeader = styled.div`
     }
   }
 `
+const BtnWrap = styled.div`
+  text-align: center;
+  & a {
+  }
+`
+
+function BackBtn() {
+  return (
+    <BtnWrap><Link to="/">ブログ一覧に戻る</Link></BtnWrap>
+  );
+}
 
 export const BlogPostTemplate = ({
   content,
@@ -50,11 +62,13 @@ export const BlogPostTemplate = ({
           <WidthLayout>
             <p>{date}</p>
             <h1>{title}</h1>
+            <Tags tags={tags}/>
           </WidthLayout>
         </BlogPostHeader>
         <WidthLayout>
           <PostContent content={content} />
           <Tags tags={tags}/>
+          <BackBtn/>
         </WidthLayout>
       </BlogPostWrap>
     </React.Fragment>

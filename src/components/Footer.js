@@ -30,7 +30,7 @@ function Icon() {
 const Footer = class extends React.Component {
   render() {
     return (
-      <footer>
+      <footer style={{marginTop: '50px'}}>
         {Icon()}
       </footer>
     )
