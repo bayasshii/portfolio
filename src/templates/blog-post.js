@@ -59,8 +59,8 @@ export const BlogPostTemplate = ({
       <BlogPostWrap>
         <BlogPostHeader>
           <WidthLayout>
-            <p>{date}</p>
-            <h1>{title}</h1>
+            <p style={{padding: 0}}>{date}</p>
+            <h1 style={{padding: 0}}>{title}</h1>
             <Tags tags={tags}/>
           </WidthLayout>
         </BlogPostHeader>
