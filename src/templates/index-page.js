@@ -19,7 +19,7 @@ class IndexPage extends React.Component {
       <Layout>
         <IndexPageTemplate
           helmet={
-            <Helmet titleTemplate="%s | Blog">
+            <Helmet>
               <meta name="twitter:card" content="summary"/>
               <meta property="og:url" content="https:kibamasa.com"/>
               <meta property="og:title" content="きばやしのブログ"/>
