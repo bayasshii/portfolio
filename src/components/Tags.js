@@ -8,7 +8,6 @@ const TagWrap = styled.div`
 const TagUl = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  padding: 10px 0 0 0;
 `
 const TagLi = styled.li`
   padding: 7px 10px;
