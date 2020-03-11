@@ -12,7 +12,7 @@ const FooterTextWrap = styled.div`
   bottom: 50px;
   left: 200px;
   @media screen and (max-width: 1000px) {
-    bottom: 70px;
+    bottom: 20px;
     left: 0;
     right: 0;
     margin: auto;
@@ -33,13 +33,17 @@ const FooterTextLi = styled.li`
   }
   @media screen and (max-width: 1000px) {
     padding: 0 10px;
+    font-size: 15px;
   }
 `
 const FooterText = styled.div`
-  font-size: 12px;
+  font-size: 10px;
   color: #fff;
   padding: 10px 0 0 0;
   text-align: center;
+  @media screen and (max-width: 1000px) {
+    padding: 5px 0 0 0Z;
+  }
 `
 
 function Icon() {
