@@ -95,9 +95,9 @@ const BlogPost = ({ data }) => {
             <title>{`${post.frontmatter.title}`}</title>
             <meta name="twitter:card" content="summary"/>
             <meta property="og:url" content="https:kibamasa.com"/>
-            <meta property="og:title" content="きばやしの雑多なブログ"/>
-            <meta property="og:description" content="きばやしの雑多なブログです。"/>
-            <meta property="og:image" content="https://treeethreee.s3-ap-northeast-1.amazonaws.com/kibatan.jpg"/>
+            <meta property="og:title" content={post.frontmatter.title}/>
+            <meta property="og:description" content="きばやしのブログ"/>
+            <meta property="og:image" content="https://treeethreee.s3-ap-northeast-1.amazonaws.com/twitterCardHome.jpg"/>
           </Helmet>
         }
         tags={post.frontmatter.tags}
