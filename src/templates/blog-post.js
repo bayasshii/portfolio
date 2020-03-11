@@ -96,10 +96,12 @@ const BlogPost = ({ data }) => {
         helmet={
           <Helmet titleTemplate="%s | Blog">
             <title>{`${post.frontmatter.title}`}</title>
-            <meta
-              name="description"
-              content={`${post.frontmatter.description}`}
-            />
+            <meta name="description" content={`${post.frontmatter.description}`}/>
+            <meta name="twitter:card" content="summary"/>
+            <meta property="og:url" content="https:kibamasa.com"/>
+            <meta property="og:title" content="きばやしの雑多なブログ"/>
+            <meta property="og:description" content="きばやしの雑多なブログです。"/>
+            <meta property="og:image" content="https://treeethreee.s3-ap-northeast-1.amazonaws.com/kibatan.jpg"/>
           </Helmet>
         }
         tags={post.frontmatter.tags}
