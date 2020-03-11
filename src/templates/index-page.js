@@ -1,25 +1,17 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Layout from '../components/Layout'
 import BlogRoll from '../components/BlogRoll'
+import styled from 'styled-components'
 import Helmet from 'react-helmet'
 import WidthLayout from '../components/WidthLayout'
 
-export const IndexPageTemplate = ({
-  helmet
-}) => {
-  return(
-    <React.Fragment>
-        <WidthLayout>
-          <BlogRoll/>
-        </WidthLayout>
-    </React.Fragment>
-  )
-}
-
-IndexPageTemplate.propTypes = {
-  helmet: PropTypes.object
-}
+export const IndexPageTemplate = () => (
+  <React.Fragment>
+      <WidthLayout>
+        <BlogRoll/>
+      </WidthLayout>
+  </React.Fragment>
+)
 
 class IndexPage extends React.Component {
   render() {
