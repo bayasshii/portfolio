@@ -5,7 +5,7 @@ import BlogRoll from '../components/BlogRoll'
 import Helmet from 'react-helmet'
 import WidthLayout from '../components/WidthLayout'
 
-export const IndexPageTemplate = () => ({
+export const IndexPageTemplate = ({
   helmet
 }) => {
   return(
