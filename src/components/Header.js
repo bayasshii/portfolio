@@ -24,7 +24,7 @@ const HeaderText = styled.div`
   @media screen and (max-width: 1000px) {
     top: 25px;
     font-size: 16px;
-    right: 30px;
+    right: 20px;
     & span {
       font-size: 12px;
       color: #FFF;

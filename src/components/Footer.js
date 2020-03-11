@@ -9,7 +9,7 @@ const FooterSVG = styled.svg`
 
 const FooterTextWrap = styled.div`
   position: absolute;
-  bottom: 50px;
+  bottom: 80px;
   left: 200px;
   @media screen and (max-width: 1000px) {
     bottom: 20px;
