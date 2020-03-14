@@ -25,8 +25,7 @@ const TagLi = styled.li`
     color: #aaa;
   }
 `
-
-const Tags = class extends React.Component {
+class Tags extends React.Component {
   render() {
     return (
       <React.Fragment>
