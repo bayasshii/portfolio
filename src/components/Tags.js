@@ -33,7 +33,7 @@ class Tags extends React.Component {
           <TagWrap>
             <TagUl className='tagUl'>
               {this.props.tags.map(tag => (
-                <TagLi key={tag + `tag`} lassName='tagLi'>
+                <TagLi key={tag + `tag`} className='tagLi'>
                   <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
                 </TagLi>
               ))}
