@@ -20,23 +20,21 @@ export const BlogPostTemplate = ({
   const PostContent = contentComponent || Content
 
   return (
-    <React.Fragment>
+    <BlogPostWrap>
       {helmet || ''}
-      <BlogPostWrap>
-        <BlogPostHeader>
-          <WidthLayout>
-            <p style={{padding: 0}}>{date}</p>
-            <h1 style={{padding: 0}}>{title}</h1>
-            <Tags tags={tags}/>
-          </WidthLayout>
-        </BlogPostHeader>
-        <WidthLayout style={{maxWidth: '750px'}}>
-          <PostContent content={content} />
+      <BlogPostHeader>
+        <WidthLayout>
+          <p style={{padding: 0}}>{date}</p>
+          <h1 style={{padding: 0}}>{title}</h1>
           <Tags tags={tags}/>
-          <BtnWrap><Link to="/">ブログ一覧に戻る</Link></BtnWrap>
         </WidthLayout>
-      </BlogPostWrap>
-    </React.Fragment>
+      </BlogPostHeader>
+      <WidthLayout style={{maxWidth: '750px'}}>
+        <PostContent content={content} />
+        <Tags tags={tags}/>
+        <BtnWrap><Link to="/">ブログ一覧に戻る</Link></BtnWrap>
+      </WidthLayout>
+    </BlogPostWrap>
   )
 }
 

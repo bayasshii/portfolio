@@ -7,33 +7,24 @@ import PropTypes from 'prop-types'
 
 export const IndexPageTemplate = (helmet) => {
   return (
-    <React.Fragment>
-        <WidthLayout>
-          <BlogRoll/>
-        </WidthLayout>
-    </React.Fragment>
+    <WidthLayout>
+      <Helmet titleTemplate="%s | Blog">
+        <title>【きばやしの日常】</title>
+        <meta name="twitter:card" content="summary"/>
+        <meta property="og:url" content="https:kibamasa.com"/>
+        <meta property="og:title" content="【きばやしの日常】"/>
+        <meta property="og:description" content="他愛ない日常の様子を綴ります"/>
+        <meta property="og:image" content="https://treeethreee.s3-ap-northeast-1.amazonaws.com/twitterCardHome.jpg"/>
+      </Helmet>
+      <BlogRoll/>
+    </WidthLayout>
   )
-}
-
-IndexPageTemplate.propTypes = {
-  helmet: PropTypes.object
 }
 
 export const IndexPage = () => {
   return (
     <Layout>
-      <IndexPageTemplate
-        helmet={
-          <Helmet titleTemplate="%s | Blog">
-            <title>【きばやしの日常】</title>
-            <meta name="twitter:card" content="summary"/>
-            <meta property="og:url" content="https:kibamasa.com"/>
-            <meta property="og:title" content="【きばやしの日常】"/>
-            <meta property="og:description" content="他愛ない日常を綴ります"/>
-            <meta property="og:image" content="https://treeethreee.s3-ap-northeast-1.amazonaws.com/twitterCardHome.jpg"/>
-          </Helmet>
-        }
-      />
+      <IndexPageTemplate/>
     </Layout>
   )
 }
