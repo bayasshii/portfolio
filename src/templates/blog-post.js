@@ -48,30 +48,31 @@ BlogPostTemplate.propTypes = {
   date: PropTypes.string
 }
 
-const BlogPost = ({ data }) => {
-  const { markdownRemark: post } = data
-
-  return (
-    <Layout>
-      <BlogPostTemplate
-        content={post.html}
-        contentComponent={HTMLContent}
-        helmet={
-          <Helmet titleTemplate="きばやしの日常 | %s">
-            <title>{`${post.frontmatter.title}`}</title>
-            <meta name="twitter:card" content="summary"/>
-            <meta property="og:url" content="https:kibamasa.com"/>
-            <meta property="og:title" content={post.frontmatter.title}/>
-            <meta property="og:description" content="[きばやしの日常]"/>
-            <meta property="og:image" content="https://treeethreee.s3-ap-northeast-1.amazonaws.com/twitterCardHome.jpg"/>
-          </Helmet>
-        }
-        tags={post.frontmatter.tags}
-        title={post.frontmatter.title}
-        date={post.frontmatter.date}
-      />
-    </Layout>
-  )
+class BlogPost extends React.Component {
+  render() {
+    const { markdownRemark: post } = this.props.data
+    return (
+      <Layout>
+        <BlogPostTemplate
+          content={post.html}
+          contentComponent={HTMLContent}
+          helmet={
+            <Helmet titleTemplate="きばやしの日常 | %s">
+              <title>{`${post.frontmatter.title}`}</title>
+              <meta name="twitter:card" content="summary"/>
+              <meta property="og:url" content="https:kibamasa.com"/>
+              <meta property="og:title" content={post.frontmatter.title}/>
+              <meta property="og:description" content="[きばやしの日常]"/>
+              <meta property="og:image" content="https://treeethreee.s3-ap-northeast-1.amazonaws.com/twitterCardHome.jpg"/>
+            </Helmet>
+          }
+          tags={post.frontmatter.tags}
+          title={post.frontmatter.title}
+          date={post.frontmatter.date}
+        />
+      </Layout>
+    )
+  }
 }
 
 BlogPost.propTypes = {
