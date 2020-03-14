@@ -6,12 +6,12 @@ import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import WidthLayout from '../components/WidthLayout'
 import Tags from '../components/Tags'
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
 const BlogPostWrap = styled.div`
 `
+
 const BlogPostHeader = styled.div`
   margin-top: -100px;
   padding-bottom: 20px;
@@ -31,6 +31,7 @@ const BlogPostHeader = styled.div`
     }
   }
 `
+
 const BtnWrap = styled.div`
   text-align: center;
   & a {
