@@ -9,35 +9,29 @@ import Tags from '../components/Tags'
 import { Link } from 'gatsby'
 import {BlogPostWrap, BlogPostHeader, BtnWrap} from '../components/BlogPost.js'
 
-export const BlogPostTemplate = ({
-  content,
-  contentComponent,
-  tags,
-  title,
-  helmet,
-  date
-}) => {
-  const PostContent = contentComponent || Content
+class BlogPostTemplate extends React.Component {
+  render() {
+    const PostContent = this.props.contentComponent || Content
+    return (
+      <BlogPostWrap>
+        {this.props.helmet || ''}
+        <BlogPostHeader>
+          <WidthLayout>
+            <p style={{padding: 0}}>{this.props.date}</p>
+            <h1 style={{padding: 0}}>{this.props.title}</h1>
+            <Tags tags={this.props.tags} />
+          </WidthLayout>
+        </BlogPostHeader>
 
-  return (
-    <BlogPostWrap>
-      {helmet || ''}
-      <BlogPostHeader>
-        <WidthLayout>
-          <p style={{padding: 0}}>{date}</p>
-          <h1 style={{padding: 0}}>{title}</h1>
-          <Tags tags={tags} />
+        <WidthLayout style={{maxWidth: '750px'}}>
+          <PostContent content={this.props.content} />
+          <Tags tags={this.props.tags} />
+          <BtnWrap><Link to="/">ブログ一覧に戻る</Link></BtnWrap>
         </WidthLayout>
-      </BlogPostHeader>
 
-      <WidthLayout style={{maxWidth: '750px'}}>
-        <PostContent content={content} />
-        <Tags tags={tags} />
-        <BtnWrap><Link to="/">ブログ一覧に戻る</Link></BtnWrap>
-      </WidthLayout>
-
-    </BlogPostWrap>
-  )
+      </BlogPostWrap>
+    )
+  }
 }
 
 BlogPostTemplate.propTypes = {
