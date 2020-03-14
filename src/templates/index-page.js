@@ -5,7 +5,7 @@ import Helmet from 'react-helmet'
 import WidthLayout from '../components/WidthLayout'
 import PropTypes from 'prop-types'
 
-export const IndexPageTemplate = (helmet) => {
+export const IndexPageTemplate = () => {
   return (
     <WidthLayout>
       <Helmet titleTemplate="%s | Blog">
