@@ -31,9 +31,9 @@ class Tags extends React.Component {
       <React.Fragment>
         {this.props.tags && this.props.tags.length ? (
           <TagWrap>
-            <TagUl>
+            <TagUl className='tagUl'>
               {this.props.tags.map(tag => (
-                <TagLi key={tag + `tag`}>
+                <TagLi key={tag + `tag`} lassName='tagLi'>
                   <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
                 </TagLi>
               ))}
