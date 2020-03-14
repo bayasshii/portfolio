@@ -7,6 +7,16 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'きばやしのブログ',
+        short_name: 'ブログ',
+        start_url: '/',
+        display: 'minimal-ui',
+        icon: 'src/img/logo.png', // This path is relative to the root of the site.
+      },
+    },
     'gatsby-plugin-sass',
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support

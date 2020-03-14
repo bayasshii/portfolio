@@ -64,7 +64,7 @@ export const BlogPostTemplate = ({
             <Tags tags={tags}/>
           </WidthLayout>
         </BlogPostHeader>
-        <WidthLayout>
+        <WidthLayout style={{maxWidth: '750px'}}>
           <PostContent content={content} />
           <Tags tags={tags}/>
           <BackBtn/>
