@@ -8,7 +8,7 @@ import PropTypes from 'prop-types'
 export const IndexPageTemplate = () => {
   return (
     <WidthLayout>
-      <Helmet titleTemplate="%s | Blog">
+      <Helmet>
         <title>【きばやしの日常】</title>
         <meta name="twitter:card" content="summary"/>
         <meta property="og:url" content="https:kibamasa.com"/>

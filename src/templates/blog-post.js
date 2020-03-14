@@ -26,14 +26,16 @@ export const BlogPostTemplate = ({
         <WidthLayout>
           <p style={{padding: 0}}>{date}</p>
           <h1 style={{padding: 0}}>{title}</h1>
-          <Tags tags={tags}/>
+          <Tags tags={tags} />
         </WidthLayout>
       </BlogPostHeader>
+
       <WidthLayout style={{maxWidth: '750px'}}>
         <PostContent content={content} />
-        <Tags tags={tags}/>
+        <Tags tags={tags} />
         <BtnWrap><Link to="/">ブログ一覧に戻る</Link></BtnWrap>
       </WidthLayout>
+
     </BlogPostWrap>
   )
 }
@@ -55,7 +57,7 @@ const BlogPost = ({ data }) => {
         content={post.html}
         contentComponent={HTMLContent}
         helmet={
-          <Helmet titleTemplate="%s | Blog">
+          <Helmet titleTemplate="きばやしの日常 | %s">
             <title>{`${post.frontmatter.title}`}</title>
             <meta name="twitter:card" content="summary"/>
             <meta property="og:url" content="https:kibamasa.com"/>

@@ -1,6 +1,5 @@
 import React from 'react'
 import Layout from '../../components/Layout'
-import styled from 'styled-components'
 import WidthLayout from '../../components/WidthLayout'
 
 export default class AboutIndexPage extends React.Component {
