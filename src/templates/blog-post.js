@@ -15,18 +15,18 @@ class BlogPostTemplate extends React.Component {
     return (
       <BlogPostWrap>
         {this.props.helmet || ''}
-        <BlogPostHeader>
-          <WidthLayout>
+        <BlogPostHeader className='postHeader'>
+          <WidthLayout className='widthlayout'>
             <p style={{padding: 0}}>{this.props.date}</p>
             <h1 style={{padding: 0}}>{this.props.title}</h1>
             <Tags tags={this.props.tags} />
           </WidthLayout>
         </BlogPostHeader>
 
-        <WidthLayout style={{maxWidth: '750px'}}>
+        <WidthLayout style={{maxWidth: '750px'}} className='widthlayout'>
           <PostContent content={this.props.content} />
           <Tags tags={this.props.tags} />
-          <BtnWrap><Link to="/">ブログ一覧に戻る</Link></BtnWrap>
+          <BtnWrap className='btnWrap'><Link to="/">ブログ一覧に戻る</Link></BtnWrap>
         </WidthLayout>
 
       </BlogPostWrap>
