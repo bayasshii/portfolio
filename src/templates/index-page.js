@@ -10,6 +10,7 @@ export const IndexPageTemplate = () => {
     <WidthLayout>
       <Helmet>
         <title>【きばやしの日常】</title>
+        <meta charSet="utf-8" />
         <meta name="twitter:card" content="summary"/>
         <meta property="og:url" content="https://kibamasa.com"/>
         <meta property="og:title" content="【きばやしの日常】"/>
