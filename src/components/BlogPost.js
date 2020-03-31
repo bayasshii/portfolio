@@ -16,9 +16,9 @@ export const BlogPostHeader = styled.div`
     margin-top: -30px;
   }
   & h1 {
-    font-size: 36px;
+    font-size: 28px;
     @media screen and (max-width: 767px) {
-      font-size: 24px;
+      font-size: 18px;
     }
   }
 `
