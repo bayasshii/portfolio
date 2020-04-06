@@ -54,7 +54,7 @@ const BrogRollItemTextIntro = styled.div`
   -webkit-line-clamp: 3;
   overflow: hidden;
   padding: 20px 0 0 0;
-  line-height: 25px;
+  line-height: 20px;
   @media screen and (max-width: 768px) {
     padding: 7px 0 0;
     font-size: 12px;
