@@ -7,35 +7,69 @@ import styled from 'styled-components'
 const BrogRollWrap = styled.div`
   padding-bottom: 50px;
 `
-const BrogRollTitle = styled.h1`
-`
 const BrogRollItemWrap = styled.div`
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 `
-
 const BrogRollItem = styled.article`
   box-sizing: border-box;
-  width: 50%;
+  width: 100%;
   margin-bottom: 30px;
-  &:nth-child(odd) {
-    padding-right: 15px;
-  }
-  &:nth-child(even) {
-    padding-left: 15px;
-  }
   @media screen and (max-width: 768px) {
     width: 100%;
     padding: 0!important;
   }
 `
-const BrogRollItemTextWrap = styled.div`
+const BrogRollItemLink = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 `
-const BrogRollItemTextTitle = styled.h2`
-  font-size: 18px
+const BrogRollItemTextWrap = styled.div`
+  padding: 0 0 0 20px;
+  width: 450px;
+  position: relative;
+  box-sizing: border-box;
+  @media screen and (max-width: 768px) {
+    padding: 10px 8px 30px;
+  }
+`
+const BrogRollItemTextTitle = styled.div`
+  font-size: 16px;
+  font-weight: 600;
 `
 const BrogRollItemTextDate = styled.div`
+  font-size: 12px;
+  @media screen and (max-width: 768px) {
+    font-size: 10px;
+  }
+`
+const BrogRollItemTextIntro = styled.div`
   color: #ADADAD;
+  font-size: 14px;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  padding: 20px 0 0 0;
+  line-height: 25px;
+  @media screen and (max-width: 768px) {
+    padding: 7px 0 0;
+    font-size: 12px;
+  }
+`
+const BrogRollItemTextTag = styled.div`
+  display: flex;
+  padding-left: 20px;
+  & div {
+    padding-right: 10px;
+    font-size: 12px;
+    @media screen and (max-width: 768px) {
+      font-size: 10px;
+    }
+  }
 `
 
 class BlogRoll extends React.Component {
@@ -45,24 +79,36 @@ class BlogRoll extends React.Component {
 
     return (
       <BrogRollWrap>
-        <BrogRollTitle style={{paddingBottom: '20px'}}>最新投稿</BrogRollTitle>
         <BrogRollItemWrap>
           {posts &&
             posts.map(({ node: post }) => (
               <BrogRollItem key={post.id}>
                 <Link to={post.fields.slug}>
-                  {post.frontmatter.featuredimage ? (
-                    <PreviewCompatibleImage
-                      imageInfo={{
-                        image: post.frontmatter.featuredimage,
-                        alt: `featured image thumbnail for post ${post.title}`,
-                      }}
-                    />
-                  ) : null}
-                  <BrogRollItemTextWrap>
-                    <BrogRollItemTextDate style={{paddingTop: '5px'}}>{post.frontmatter.date}</BrogRollItemTextDate>
-                    <BrogRollItemTextTitle style={{paddingTop: '0px'}}>{post.frontmatter.title}</BrogRollItemTextTitle>
-                  </BrogRollItemTextWrap>
+                  <BrogRollItemLink>
+                    {post.frontmatter.featuredimage ? (
+                      <PreviewCompatibleImage
+                        imageInfo={{
+                          image: post.frontmatter.featuredimage,
+                          alt: `featured image thumbnail for post ${post.title}`,
+                        }}
+                      />
+                    ) : null}
+                    <BrogRollItemTextWrap>
+                      <BrogRollItemTextTitle>{post.frontmatter.title}</BrogRollItemTextTitle>
+                      <div style={{display:'flex', padding:'5px 0 0 0'}}>
+                        <BrogRollItemTextDate>{post.frontmatter.date}</BrogRollItemTextDate>
+                        <BrogRollItemTextTag>
+                          { post.frontmatter.tags.map((tag) => (
+                            tag ? (
+                              <div>{tag}</div>
+                            ) : console.log('エラーだよん')
+                          ))}
+                        </BrogRollItemTextTag>
+                      </div>
+                      <BrogRollItemTextIntro>{post.excerpt}</BrogRollItemTextIntro>
+                    </BrogRollItemTextWrap>
+                  </BrogRollItemLink>
+
                 </Link>
               </BrogRollItem>
             ))}
@@ -96,6 +142,7 @@ export default () => (
                 slug
               }
               frontmatter {
+                tags
                 title
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
