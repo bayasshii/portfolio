@@ -57,7 +57,7 @@ class BlogPost extends React.Component {
               <meta property="og:url" content="https:kibamasa.com"/>
               <meta property="og:title" content={post.frontmatter.title}/>
               <meta property="og:description" content="[きばやしの日常]"/>
-              <meta property="og:image" content="https://treeethreee.s3-ap-northeast-1.amazonaws.com/twitterCardHome.jpg"/>
+              <meta property="og:image" content={post.frontmatter.featuredimage}/>
             </Helmet>
           }
           tags={post.frontmatter.tags}
