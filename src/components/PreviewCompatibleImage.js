@@ -5,11 +5,12 @@ import Img from 'gatsby-image'
 import styled from 'styled-components'
 
 const StyledImg = styled(Img)`
-  border-radius: 5px;
-  width: 100%;
-  height: 300px;
+  border-radius: 2px;
+  width: calc(100% - 500px);
+  height: 250px;
   @media screen and (max-width: 1000px) {
     height: auto;
+    width: 100%;
   }
 `
 
@@ -25,7 +26,7 @@ const PreviewCompatibleImage = ({ imageInfo }) => {
   }
 
   if (!!image && typeof image === 'string') {
-    return <img style={{ borderRadius: '5px' }} src={image} alt={alt} />
+    return <StyledImg style={{ borderRadius: '5px' }} src={image} alt={alt} />
   }
 
   return null
