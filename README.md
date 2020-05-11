@@ -1,3 +1,3 @@
-# portfolio
+# blog
   
 GatsbyとNetlifyCMSでフロントを作って、Netlifyでデプロイしました。   
