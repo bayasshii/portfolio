@@ -1,4 +1,4 @@
 # blog
   
-https://www.kibanasa.com  
+https://www.kibamasa.com  
 GatsbyとNetlifyCMSでフロントを作って、Netlifyでデプロイしました。   
